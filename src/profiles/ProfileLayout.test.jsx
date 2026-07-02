@@ -5,6 +5,7 @@ import ProfileLayout from './ProfileLayout'
 // テスト用のサンプルデータ(1人分のプロフィール)
 const sampleProfile = {
   id: 'test-taro',
+  name: 'テスト 太郎',
   role: 'テストエンジニア',
   emoji: '🧪',
   location: '東京',

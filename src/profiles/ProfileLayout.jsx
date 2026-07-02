@@ -3,7 +3,7 @@ import './profile.css'
 // 各プロフィールページで共通して使うレイアウト。
 // 1人分のデータ(profile)を受け取り、ヘッダー・自己紹介・スキル・リンクを描画する。
 function ProfileLayout({ profile }) {
-  const { name, role, emoji, location, tagline, bio, skills = [], links = [] } =
+  const { role, emoji, location, tagline, bio, skills = [], links = [] } =
     profile
 
   const paragraphs = Array.isArray(bio) ? bio : [bio]
@@ -15,7 +15,6 @@ function ProfileLayout({ profile }) {
           {emoji}
         </div>
         <div>
-          <h1>{name}</h1>
           <p className="profile-role">{role}</p>
           {location && <p className="profile-location">📍 {location}</p>}
           {tagline && <p className="profile-tagline">{tagline}</p>}
