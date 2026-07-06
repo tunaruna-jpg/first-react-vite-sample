@@ -43,20 +43,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. 公開する直前にも自動テストを実行する。
+      # 4. 静的チェック: コードの書き方にルール違反がないか調べる
+      - name: Lint
+        run: npm run lint
+
+      # 5. 公開する直前にも自動テストを実行する。
       #    壊れたアプリはここでパイプラインが止まり、公開されない (品質ゲート)
       - name: Test
         run: npm test
 
-      # 5. 公開できる形 (HTML/CSS/JS) にアプリを組み立てる
+      # 6. 公開できる形 (HTML/CSS/JS) にアプリを組み立てる
       - name: Build
         run: npm run build
 
-      # 6. GitHub Pages の公開設定を準備する
+      # 7. GitHub Pages の公開設定を準備する
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
-      # 7. ビルド成果物 (dist フォルダ) を次のジョブに受け渡す
+      # 8. ビルド成果物 (dist フォルダ) を次のジョブに受け渡す
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
