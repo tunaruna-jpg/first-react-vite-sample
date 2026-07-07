@@ -2,8 +2,8 @@ import ProfileLayout from './ProfileLayout'
 
 // このファイル = 田中健二さん1人分のプロフィールページ
 export const profile = {
-  id: 'kenji-tanaka',
-  name: '田中 健二',
+  id: 'runa-sonoda',
+  name: '其田 月',
   role: 'バックエンドエンジニア',
   emoji: '🐢',
   location: '福岡',
